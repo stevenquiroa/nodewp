@@ -26,3 +26,32 @@ exports.get = function (key) {
 exports.keys = function () {
     return cache.keys()
 }
+exports.getById = function(id, obj){
+    var results = []
+    if(!obj) return results
+    var searchField = "id"
+    var searchVal = id
+    var length = obj.length
+    for (var i=0;  i < length;  i++)
+    {
+        if (obj[i][searchField] == searchVal) {
+            results.push(obj[i])
+            return results
+        }
+    }
+    return results
+}
+exports.getByField = function(field, value, obj){
+    var results = []
+    if(!obj) return results
+    var searchField = field
+    var searchVal = value
+    var length = obj.length        
+    for (var i=0 ; i < length ; i++)
+    {
+        if (obj[i][searchField] == searchVal) {
+            results.push(obj[i])
+        }
+    }
+    return results
+} 

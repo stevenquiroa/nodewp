@@ -1,0 +1,8 @@
+<h1>Example: {{post_title}}</h1>
+{{#if posts}}
+<ul>
+	{{#each posts}}
+	<li><a href="/posts/{{id}}">{{title.rendered}}</a></li>
+	{{/each}}
+</ul>
+{{/if}}

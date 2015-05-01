@@ -3,7 +3,7 @@ var cache = require('../helper')
 var WP = require( 'wordpress-rest-api' );
 
 var router = express.Router()
-var wp = new WP({ endpoint: 'http://quiroa.me/wp-json/wp/v2' });
+var wp = new WP({ endpoint: 'http://quiroa.dev/wp-json/wp/v2' });
 
 /* GET users listing. */
 router.get('/:id', function(req, res) {

@@ -5,7 +5,7 @@ var cache = require('../helper')
 var WP = require( 'wordpress-rest-api' );
 
 var router = express.Router()
-var wp = new WP({ endpoint: 'http://quiroa.me/wp-json/wp/v2' });
+var wp = new WP({ endpoint: 'http://quiroa.dev/wp-json/wp/v2' });
 /* GET home page. */
 router.get('/', function(req, res) {
 	var message = cache.get(req.path)
@@ -14,9 +14,7 @@ router.get('/', function(req, res) {
 		    if (err) res.render('error', {error: err.message})
 			message = {posts: data}
 			cache.set(req.path, message)
-
-			res.render('index', message)
-		
+			res.render('index', message)		
 		})
 	}else{
 		res.render('index', message)
